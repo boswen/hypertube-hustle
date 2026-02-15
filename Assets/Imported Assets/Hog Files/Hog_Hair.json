@@ -1,0 +1,46 @@
+{
+  "Textures": {},
+  "Parameters": {
+    "BlendMode": 1,
+    "ShadingModel": 7,
+    "Colors": {
+      "HairColor": {
+        "R": 1.0,
+        "G": 0.845799,
+        "B": 0.6,
+        "A": 1.0,
+        "Hex": "FFEDCC"
+      },
+      "Scatter": {
+        "R": 0.825689,
+        "G": 1.0,
+        "B": 1.0,
+        "A": 1.0,
+        "Hex": "EBFFFF"
+      }
+    },
+    "Scalars": {
+      "AlphaStrength": 2.0,
+      "Backlight": 0.0,
+      "HairDarkness": 1.002308,
+      "Roughness": 0.363423,
+      "RefractionDepthBias": 0.0
+    },
+    "Switches": {},
+    "Properties": {
+      "BasePropertyOverrides": {
+        "TwoSided": true,
+        "BlendMode": "BLEND_Masked",
+        "ShadingModel": "MSM_Hair",
+        "OpacityMaskClipValue": 0.228272
+      },
+      "bIncludedInBaseGame": true
+    },
+    "HasTopDiffuse": false,
+    "HasTopNormals": false,
+    "HasTopSpecularMasks": false,
+    "HasTopEmissive": false,
+    "IsTranslucent": false,
+    "IsNull": true
+  }
+}

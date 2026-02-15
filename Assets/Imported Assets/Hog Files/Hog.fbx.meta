@@ -1,0 +1,760 @@
+fileFormatVersion: 2
+guid: 5f3cdba1be699cf45af5c20c1852cd09
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hog_Hair
+    second: {fileID: 2100000, guid: 6d6515f44e08ea34fb62b007e369217f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hog_Master_Inst
+    second: {fileID: 2100000, guid: 624960de17510de4e92f1287eb2141a5, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: Hog/root
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Hog_Walk
+      takeName: Hog|walk
+      internalID: 8557454801036920174
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hog_Run
+      takeName: Hog|Run
+      internalID: -4400258766470797983
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hog
+        weight: 1
+      - path: Hog/root
+        weight: 1
+      - path: Hog/root/pelvis
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l/backfoot_l
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l/backfoot_l/backtoe_l
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l/backfoot_l/backtoe_l/vfxfootsocket_back_l
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l/backfoot_l/backtoe_l/vfxfootsocket_back_l/vfxfootsocket_back_l_end
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l/backfoot_l/leghairfront_l_03
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l/backfoot_l/leghairfront_l_03/leghairfront_l_03_end
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l/backfoot_l/leghairfront_l_04
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_l/backknee_l/backfoot_l/leghairfront_l_04/leghairfront_l_04_end
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_r
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_r/backknee_r
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_r/backknee_r/backfoot_r
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_r/backknee_r/backfoot_r/backtoe_r
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/backthigh_r/backknee_r/backfoot_r/backtoe_r/backtoe_r_end
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/tail_01
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/tail_01/tail_02
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/tail_01/tail_02/tail_03
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/tail_01/tail_02/tail_03/tail_04
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/tail_01/tail_02/tail_03/tail_04/tail_05
+        weight: 1
+      - path: Hog/root/pelvis/lowerbody/tail_01/tail_02/tail_03/tail_04/tail_05/tail_05_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/bodyjiggle
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/bodyjiggle/bodyjiggle_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/headplate_05
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/headplate_05/headplate_05_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/headplate_06
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/headplate_06/headplate_06_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/chestjiggle
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/chestjiggle/chestjiggle_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l/frontfoot_l
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l/frontfoot_l/fronttoe_l
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l/frontfoot_l/fronttoe_l/vfxfootsocket_front_l
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l/frontfoot_l/fronttoe_l/vfxfootsocket_front_l/vfxfootsocket_front_l_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l/frontfoot_l/leghairfront_l_01
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l/frontfoot_l/leghairfront_l_01/leghairfront_l_01_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l/frontfoot_l/leghairfront_l_02
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_l/frontknee_l/frontfoot_l/leghairfront_l_02/leghairfront_l_02_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_r
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_r/frontknee_r
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_r/frontknee_r/frontfoot_r
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_r/frontknee_r/frontfoot_r/fronttoe_r
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_r/frontknee_r/frontfoot_r/fronttoe_r/vfxfootsocket_front_r
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/frontthigh_r/frontknee_r/frontfoot_r/fronttoe_r/vfxfootsocket_front_r/vfxfootsocket_front_r_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/headplate_03
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/headplate_03/headplate_03_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/headplate_04
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/headplate_04/headplate_04_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/eyebrow_l
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/eyebrow_l/eyebrow_l_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/eyebrow_r
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/eyebrow_r/eyebrow_r_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/headplate_01
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/headplate_01/headplate_01_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/jaw
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/jaw/jaw_02
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/jaw/jaw_02/vfxjawSocket
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/jaw/jaw_02/vfxjawSocket/vfxjawSocket_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/jaw/jowls_l
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/jaw/jowls_l/jowls_l_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/jaw/jowls_r
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/head/jaw/jowls_r/jowls_r_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/headplate_02
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/headplate_02/headplate_02_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/neckjiggle
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/neck/neckjiggle/neckjiggle_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/shoulder_l
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/shoulder_l/shoulder_l_end
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/shoulder_r
+        weight: 1
+      - path: Hog/root/pelvis/spine_01/spine_02/shoulder_r/shoulder_r_end
+        weight: 1
+      - path: Hog/root/rootSocket
+        weight: 1
+      - path: Hog/root/rootSocket/rootSocket_end
+        weight: 1
+      - path: Hog.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.04
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 2
+    minBoneWeight: 0.001
+    optimizeBones: 0
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 1
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Hog(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hog
+      parentName: Hog(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: root
+      parentName: Hog
+      position: {x: 0.00080854143, y: -0.017014053, z: 0.030869514}
+      rotation: {x: -0.76744336, y: -0.050529502, z: 0.025356822, w: 0.6386193}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: pelvis
+      parentName: root
+      position: {x: 0.0005088404, y: 0.011558473, z: 0.020417918}
+      rotation: {x: 0.5000002, y: 0.5179364, z: 0.48139563, w: 0.49999994}
+      scale: {x: 0.9999997, y: 0.9999999, z: 0.9999999}
+    - name: spine_01
+      parentName: pelvis
+      position: {x: -0.010366546, y: -0.00058472843, z: 0.000021381198}
+      rotation: {x: 0.000000044703484, y: 0.003454268, z: 0.09446353, w: 0.9955224}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: spine_02
+      parentName: spine_01
+      position: {x: -0.01060262, y: 0.00008330507, z: -0.0000030466556}
+      rotation: {x: 0.000000015862216, y: 0.0003830609, z: 0.010479592, w: 0.9999451}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: neck
+      parentName: spine_02
+      position: {x: -0.0067186398, y: -0.0012987219, z: 0.000047488556}
+      rotation: {x: -0.00000003120333, y: 0.009612148, z: 0.26287356, w: 0.9647824}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: head
+      parentName: neck
+      position: {x: -0.0047968198, y: 0.0000936516, z: -0.0000034246327}
+      rotation: {x: 3.5527133e-15, y: -0, z: 2.9993102e-10, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000002}
+    - name: headplate_01
+      parentName: head
+      position: {x: -0.0035296911, y: 0.0063245962, z: -0.0003042774}
+      rotation: {x: -0.647352, y: -0.30795643, z: -0.63652414, w: 0.28449154}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1}
+    - name: headplate_01_end
+      parentName: headplate_01
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: eyebrow_r
+      parentName: head
+      position: {x: -0.008526334, y: 0.0063634724, z: 0.0037841992}
+      rotation: {x: -0.64735216, y: -0.30795625, z: -0.6365244, w: 0.28449085}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000005}
+    - name: eyebrow_r_end
+      parentName: eyebrow_r
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: eyebrow_l
+      parentName: head
+      position: {x: -0.008526353, y: 0.0060700984, z: -0.0042388486}
+      rotation: {x: -0.64735204, y: -0.30795637, z: -0.63652426, w: 0.28449115}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000006}
+    - name: eyebrow_l_end
+      parentName: eyebrow_l
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jaw
+      parentName: head
+      position: {x: -0.0033947392, y: -0.0013447278, z: 0.000049170438}
+      rotation: {x: -0.017146599, y: -0.0063187527, z: -0.34571466, w: 0.93816173}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000006}
+    - name: jowls_l
+      parentName: jaw
+      position: {x: -0.0011590407, y: -0.0014427241, z: -0.006080721}
+      rotation: {x: 0.000000048428774, y: 0.00000026542693, z: 0.000000049934897,
+        w: 1}
+      scale: {x: 0.99999976, y: 1, z: 1}
+    - name: jowls_l_end
+      parentName: jowls_l
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jowls_r
+      parentName: jaw
+      position: {x: -0.0018082282, y: -0.0014089212, z: 0.0064444873}
+      rotation: {x: -0.50000006, y: -0.49999988, z: -0.49999985, w: 0.50000024}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: jowls_r_end
+      parentName: jowls_r
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jaw_02
+      parentName: jaw
+      position: {x: -0.0032120405, y: -0.007670166, z: 0.0000743968}
+      rotation: {x: 0.000000016763805, y: 0.00000017648561, z: 0.00000004867615, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1.0000001}
+    - name: vfxjawSocket
+      parentName: jaw_02
+      position: {x: -0.004523296, y: 0.004603971, z: 0.00000023422243}
+      rotation: {x: 0.7660465, y: 0.0000001315678, z: 0.00000019209587, w: -0.6427851}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: vfxjawSocket_end
+      parentName: vfxjawSocket
+      position: {x: -0, y: 0.00039999996, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: headplate_02
+      parentName: neck
+      position: {x: -0.0016441136, y: 0.0048631877, z: -0.0002508402}
+      rotation: {x: -0.64735204, y: -0.30795628, z: -0.6365243, w: 0.28449118}
+      scale: {x: 1.0000005, y: 1.0000001, z: 0.99999994}
+    - name: headplate_02_end
+      parentName: headplate_02
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: neckjiggle
+      parentName: neck
+      position: {x: -0.007740708, y: -0.008635641, z: 0.00037131202}
+      rotation: {x: -0.64735216, y: -0.3079561, z: -0.6365242, w: 0.28449112}
+      scale: {x: 1.0000002, y: 1.0000007, z: 1.0000007}
+    - name: neckjiggle_end
+      parentName: neckjiggle
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: headplate_04
+      parentName: spine_02
+      position: {x: 0.0028296593, y: 0.0058212937, z: -0.00015230593}
+      rotation: {x: -0.5497188, y: -0.4645478, z: -0.53309983, w: 0.4447574}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000005}
+    - name: headplate_04_end
+      parentName: headplate_04
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: headplate_03
+      parentName: spine_02
+      position: {x: -0.003066787, y: 0.0051546716, z: -0.00048717012}
+      rotation: {x: -0.5497188, y: -0.4645478, z: -0.5330999, w: 0.4447573}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000002}
+    - name: headplate_03_end
+      parentName: headplate_03
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shoulder_r
+      parentName: spine_02
+      position: {x: -0.0019917353, y: 0.0036277105, z: 0.010081688}
+      rotation: {x: -0.01820418, y: -0.0015856059, z: -0.08675664, w: 0.9960619}
+      scale: {x: 1, y: 0.9999999, z: 1.0000004}
+    - name: shoulder_r_end
+      parentName: shoulder_r
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shoulder_l
+      parentName: spine_02
+      position: {x: -0.00058387744, y: 0.0014172294, z: -0.011823633}
+      rotation: {x: -0.01820416, y: -0.0015856685, z: -0.08675666, w: 0.996062}
+      scale: {x: 0.9999998, y: 0.9999999, z: 1}
+    - name: shoulder_l_end
+      parentName: shoulder_l
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: frontthigh_r
+      parentName: spine_02
+      position: {x: 0.0022481517, y: -0.0001890157, z: 0.010296246}
+      rotation: {x: -0.23755008, y: 0.5338771, z: 0.36046922, w: 0.7270538}
+      scale: {x: 0.9999998, y: 0.99999976, z: 1}
+    - name: frontknee_r
+      parentName: frontthigh_r
+      position: {x: -0.0069938134, y: 0.0000000015258789, z: 4.768371e-10}
+      rotation: {x: -0.23677394, y: 0.1304227, z: 0.061561644, w: 0.9608009}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: frontfoot_r
+      parentName: frontknee_r
+      position: {x: -0.010775806, y: 0.0000000030517577, z: 0.000000002247095}
+      rotation: {x: 0.07112679, y: 0.0030573586, z: -0.045161873, w: 0.99643975}
+      scale: {x: 0.9999998, y: 0.9999999, z: 0.9999999}
+    - name: fronttoe_r
+      parentName: frontfoot_r
+      position: {x: -0.008176972, y: -0.000230834, z: -0.0000026364328}
+      rotation: {x: -0.00088702823, y: 0.030430092, z: 0.08636078, w: 0.9957987}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000004}
+    - name: vfxfootsocket_front_r
+      parentName: fronttoe_r
+      position: {x: -0.0074665113, y: 0.0025709092, z: 0.00000012512209}
+      rotation: {x: -0.6644615, y: -0.24184875, z: -0.66446203, w: 0.24184743}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000004}
+    - name: vfxfootsocket_front_r_end
+      parentName: vfxfootsocket_front_r
+      position: {x: -0, y: 0.0003999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: frontthigh_l
+      parentName: spine_02
+      position: {x: 0.0022481491, y: -0.00094047666, z: -0.010254944}
+      rotation: {x: -0.65417403, y: -0.2814076, z: 0.6628699, w: -0.23123518}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: frontknee_l
+      parentName: frontthigh_l
+      position: {x: 0.006993806, y: 7.6293943e-10, z: -2.8610228e-10}
+      rotation: {x: 0.15480587, y: -0.007858422, z: -0.013696038, w: -0.9878188}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: frontfoot_l
+      parentName: frontknee_l
+      position: {x: 0.0107758045, y: 0.0000000033378602, z: 0.0000000012516974}
+      rotation: {x: -0.016638137, y: -0.023468131, z: 0.33429238, w: -0.9420303}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: fronttoe_l
+      parentName: frontfoot_l
+      position: {x: 0.007989426, y: 0.00019179647, z: -0.000014611333}
+      rotation: {x: 0.02259168, y: 0.036620867, z: 0.41830158, w: 0.90728843}
+      scale: {x: 1.0000007, y: 0.99999976, z: 0.99999994}
+    - name: vfxfootsocket_front_l
+      parentName: fronttoe_l
+      position: {x: 0.0072890194, y: -0.0044961153, z: -0.000000056266785}
+      rotation: {x: -0.18301834, y: 0.6830112, z: -0.18301845, w: -0.68301123}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: vfxfootsocket_front_l_end
+      parentName: vfxfootsocket_front_l
+      position: {x: -0, y: 0.00040000046, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: leghairfront_l_02
+      parentName: frontfoot_l
+      position: {x: 0.005585022, y: 0.0026142194, z: -0.00053050637}
+      rotation: {x: 0.008701011, y: 0.018643321, z: 0.536414, w: -0.8437042}
+      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+    - name: leghairfront_l_02_end
+      parentName: leghairfront_l_02
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: leghairfront_l_01
+      parentName: frontfoot_l
+      position: {x: -0.0016368642, y: 0.001594674, z: -0.00013072166}
+      rotation: {x: 0.008697962, y: 0.018640451, z: 0.5364112, w: -0.8437062}
+      scale: {x: 1.0000002, y: 0.9999998, z: 1.0000004}
+    - name: leghairfront_l_01_end
+      parentName: leghairfront_l_01
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: chestjiggle
+      parentName: spine_02
+      position: {x: -0.0044335765, y: -0.019455025, z: 0.00056160474}
+      rotation: {x: -0.5497187, y: -0.46454808, z: -0.53309965, w: 0.44475767}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: chestjiggle_end
+      parentName: chestjiggle
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: headplate_05
+      parentName: spine_01
+      position: {x: 0.001152433, y: 0.0075485893, z: -0.00037909733}
+      rotation: {x: -0.5450245, y: -0.47011274, z: -0.528199, w: 0.45049766}
+      scale: {x: 1, y: 0.9999999, z: 0.9999998}
+    - name: headplate_05_end
+      parentName: headplate_05
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: headplate_06
+      parentName: spine_01
+      position: {x: -0.006388856, y: 0.008491956, z: -0.000002598515}
+      rotation: {x: -0.5450243, y: -0.470113, z: -0.52819884, w: 0.45049787}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: headplate_06_end
+      parentName: headplate_06
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bodyjiggle
+      parentName: spine_01
+      position: {x: 0.008130638, y: -0.013426106, z: 0.00025242902}
+      rotation: {x: -0.49933735, y: -0.5185737, z: -0.48070922, w: 0.50066173}
+      scale: {x: 1, y: 1.0000005, z: 1.0000005}
+    - name: bodyjiggle_end
+      parentName: bodyjiggle
+      position: {x: -0, y: 0.00039999964, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: lowerbody
+      parentName: pelvis
+      position: {x: 0.0014543597, y: 0.0008821665, z: 0.00011902066}
+      rotation: {x: 0.00017727911, y: 0.018254995, z: 0.9997866, w: -0.009670958}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000008}
+    - name: tail_01
+      parentName: lowerbody
+      position: {x: -0.0071651987, y: 0.0011227182, z: 0.0000000012397767}
+      rotation: {x: 0.000016542961, y: 0.000003281748, z: -0.17996563, w: 0.983673}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: tail_02
+      parentName: tail_01
+      position: {x: -0.012521229, y: 0.00026082323, z: 0.000066809946}
+      rotation: {x: 0.0000002290871, y: 0.00000022174089, z: -0.09823043, w: 0.9951637}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000006}
+    - name: tail_03
+      parentName: tail_02
+      position: {x: -0.008270301, y: -0.0000149105545, z: -0.0002827958}
+      rotation: {x: 0.0000093434, y: 0.0000024532924, z: 0.29999608, w: 0.95394045}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000001}
+    - name: tail_04
+      parentName: tail_03
+      position: {x: -0.00819403, y: -0.0006375087, z: -0.00019632874}
+      rotation: {x: -0.000008126341, y: 0.0000019437896, z: 0.1993672, w: 0.9799249}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1}
+    - name: tail_05
+      parentName: tail_04
+      position: {x: -0.008210079, y: -0.00092870515, z: -0.0006355885}
+      rotation: {x: 0.00000001471653, y: 0.00000014097063, z: 0.0000027865335, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000001}
+    - name: tail_05_end
+      parentName: tail_05
+      position: {x: -0, y: 0.00040000142, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backthigh_l
+      parentName: lowerbody
+      position: {x: 0.00047875824, y: 0.0016226427, z: -0.007771417}
+      rotation: {x: -0.07112472, y: 0.40488884, z: 0.91158575, w: -0.004210422}
+      scale: {x: 0.9999997, y: 0.9999998, z: 1}
+    - name: backknee_l
+      parentName: backthigh_l
+      position: {x: 0.0066730287, y: -0.00006623039, z: -0.00011499661}
+      rotation: {x: 0.22123398, y: -0.020813001, z: -0.27547422, w: -0.9352734}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: backfoot_l
+      parentName: backknee_l
+      position: {x: 0.013142487, y: -0.0000000044822692, z: 0.0000000020027162}
+      rotation: {x: 0.10011169, y: 0.12117408, z: 0.9172314, w: -0.36603445}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: backtoe_l
+      parentName: backfoot_l
+      position: {x: 0.009880596, y: -0.0000000038862233, z: -8.583069e-10}
+      rotation: {x: 0.00000016763805, y: 0.00000002235174, z: -0.00000012275994, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: vfxfootsocket_back_l
+      parentName: backtoe_l
+      position: {x: 0.0055957064, y: -0.0044217575, z: -0.000000033760074}
+      rotation: {x: -0.122791305, y: 0.69636357, z: -0.1227904, w: -0.6963639}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000007}
+    - name: vfxfootsocket_back_l_end
+      parentName: vfxfootsocket_back_l
+      position: {x: -0, y: 0.0003999998, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: leghairfront_l_04
+      parentName: backfoot_l
+      position: {x: 0.00679484, y: 0.0025015674, z: -0.00030043017}
+      rotation: {x: 0.5795528, y: -0.45702276, z: -0.40511495, w: 0.53956527}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+    - name: leghairfront_l_04_end
+      parentName: leghairfront_l_04
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: leghairfront_l_03
+      parentName: backfoot_l
+      position: {x: -0.0020083706, y: 0.0013895917, z: -0.00016787232}
+      rotation: {x: -0.57955295, y: 0.45702302, z: 0.4051147, w: -0.539565}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000004}
+    - name: leghairfront_l_03_end
+      parentName: leghairfront_l_03
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backthigh_r
+      parentName: lowerbody
+      position: {x: 0.00047875338, y: 0.0016226494, z: 0.0077714147}
+      rotation: {x: 0.36285672, y: 0.042575147, z: 0.013143202, w: 0.93077904}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1.0000002}
+    - name: backknee_r
+      parentName: backthigh_r
+      position: {x: -0.0066730273, y: 0.00006624326, z: 0.00011499535}
+      rotation: {x: -0.22288196, y: 0.023116544, z: 0.27078912, w: 0.93619573}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000002}
+    - name: backfoot_r
+      parentName: backknee_r
+      position: {x: -0.013142487, y: -0.0000000051975255, z: 8.3446505e-10}
+      rotation: {x: -0.077097446, y: -0.07142395, z: -0.924491, w: 0.36642998}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: backtoe_r
+      parentName: backfoot_r
+      position: {x: -0.009880593, y: -0.0000000022649764, z: -7.8678125e-10}
+      rotation: {x: 0.0000000037252899, y: -0.00000004656612, z: -0.00000086892385,
+        w: 1}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1.0000001}
+    - name: backtoe_r_end
+      parentName: backtoe_r
+      position: {x: -0, y: 0.0004000007, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rootSocket
+      parentName: root
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: rootSocket_end
+      parentName: rootSocket
+      position: {x: -0, y: 0.0004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hog.001
+      parentName: Hog(Clone)
+      position: {x: -0.048925262, y: -0.6615368, z: 0.19484873}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.04
+    rootMotionBoneName: root
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
