@@ -37,10 +37,10 @@ public class EnemyController : MonoBehaviour
             stompParticles.Play();
         }
 
-        // Play sound effect
+        // Make a "squish" sound
         if (stompSound != null && audioSource != null)
         {
-            audioSource.PlayOneShot(stompSound);
+            audioSource.PlayOneShot(stompSound, 1.0f);
         }
 
         // Start the squish & fade-out sequence

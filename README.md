@@ -115,8 +115,15 @@ Planned future ideas:
 
 ## 📜 License
 
-This project is currently released for demonstration and educational
-purposes.
+This project is currently released for demonstration and educational purposes.
+
+---
+
+## 🙏 Attribution
+
+"Boing19" sound effect found at https://www.zapsplat.com/music/cartoon-boing-jump-or-bounce-funny-jaw-harp-tone-19/
+
+All other assets found on the UAS.
 
 ---
 

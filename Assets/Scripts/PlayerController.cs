@@ -19,15 +19,17 @@ public class PlayerController : MonoBehaviour
     private GameObject playerGO;
     public float jumpForce;
     public float gravityModifier;
-    public bool isOnGround;
+    public bool isOnGround; // Track whether the player is currently considered on the ground or in the air
     public float maxHeight; // will eventually be needed when player has a jetpack/hoverpack/etc
 
     [Header("Audio Settings")]
     //public AudioClip footsteps1Sound;   // These sounds are now played thru the
     //public AudioClip footsteps2Sound;   // PlayerAudioController component, attached
     //public AudioClip jumpSound;         // to the Player GameObject... However,
+    
     public AudioClip itemPickupSound;     // ... these last two are not since they
     public AudioClip crashSound;          // need to be able to play independently.
+
     public AudioSource pickupNCrashAudio; // Assigned in the inspector
     //public AudioSource footstepJumpAudio; // Assigned in the inspector
 
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
     private TextMeshProUGUI scoreText; // assigned to this at game start if mainScoreTextGO is assigned
     private TextMeshProUGUI firstLineOfText; // assigned to this at game start if gameOverText1 is assigned
     private ScoreManager scoreManager;
+    private EnemyController enemyController;
     public int finalScore;
     [Tooltip("Final score value; calculated automatically")]
     public float fadeMusicDuration = 5f;
@@ -75,8 +78,15 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction jumpAction;
 
+    // Constants
+    private readonly float stompBounceForce = 1000.0f;
+
     // Constants for winCondition int used to show final score text
+    // These fields are public (accessible by other scripts) 
+    // but their values will not be serialized or saved by Unity.
+    [System.NonSerialized]
     public int GAMELOST = 1;
+    [System.NonSerialized]
     public int GAMEWON  = 2;
 
     // -- Primary Methods --
@@ -131,7 +141,7 @@ public class PlayerController : MonoBehaviour
         playerRb.isKinematic = false;
 
         // Reset position and rotation
-        transform.position = new Vector3(36f, 0.25f, -4.0f); // Default position (adjust as needed)
+        transform.position = new Vector3(27.5f, 0.25f, -4.0f); // Default position (adjust as needed)
         transform.rotation = Quaternion.identity; // Reset to "default" rotation...
         transform.Rotate(0, -90, 0); // ...then reset to the *actual* default rotation!
 
@@ -172,6 +182,7 @@ public class PlayerController : MonoBehaviour
 
         // Reset the jump flag after checking
         jumpTriggered = false;
+        //Debug.Log("Player velocity.y = " + playerRb.velocity.y);
     }
 
     private bool clearedForLiftOff()
@@ -208,9 +219,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Player collision detected!");
         // If still on ground, play dirt particle effects and footsteps sound
         if (collision.gameObject.CompareTag("Ground") && !gameOver)
         {
+            Debug.Log("Nevermind, it's just the ground...");
             isOnGround = true;
             playerAnim.StopPlayback();
             playerAnim.Play("Run_Static");
@@ -229,31 +242,96 @@ public class PlayerController : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("Obstacle") && !crashPlayed)
         {
+            Debug.Log("Player collided with an obstacle: " + collision.gameObject.name);
             TriggerGameOver();
         }
 
         else if (collision.gameObject.CompareTag("Enemy") && !crashPlayed)
         {
+            Debug.Log("Player collided with an enemy: " + collision.gameObject.name);
             TriggerGameOver();
         }
     }
 
     // If Player collides with something, handle it
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider trigger)
     {
-        if (other.gameObject.CompareTag("ItemPickup"))
+        Debug.Log("Player trigger detected with " + trigger.gameObject.name);
+
+        // Item Pickup
+        if (trigger.gameObject.CompareTag("ItemPickup"))
         {
             // any bools to set to true?
             // any powerup indicators to set active?
             itemPickupParticle.Play();
-            pickupNCrashAudio.PlayOneShot(itemPickupSound, 1.0f); // ... *except this one
+            pickupNCrashAudio.PlayOneShot(itemPickupSound, 1.0f);
             scoreManager.AddPickupBonus(); // add points!
-            Destroy(other.gameObject);
+            Destroy(trigger.gameObject);
 
             // check child object's tag (to find "ore" or "plate")
             // add the thing picked up to some tabulator, e.g. ironOres++ or ironPlates++
 
             // StartCoroutine(PowerupCooldown());   // If the powerup has a timelimit, shut er down when it's done
+        }
+
+        // Enemy Stomp
+        else if (trigger.gameObject.CompareTag("EnemyTop"))
+        {
+            Debug.Log("Player collided with enemy tag named: " + trigger.gameObject.tag);
+            // Confirm we're moving downward
+            if (playerRb.velocity.y < 0)
+            {
+                // Bounce the player
+                playerRb.AddForce(Vector3.up * stompBounceForce, ForceMode.Impulse);
+                playerAnim.SetTrigger("Jump_trig");
+                // Bounce sound and "squish" particle effects are played via enemy controller script
+
+                // Add squish points!
+                scoreManager.AddSquishBonus(); // add points!
+
+                // Tell enemy it got stomped
+                enemyController = trigger.gameObject.GetComponentInParent<EnemyController>();
+                enemyController.OnStomped();
+
+                // We remain "in the air" after a bounce, so don't set isOnGround = true here
+                // Instead, the main playerController will register the collision with ground
+                // and set it's own isOnGround bool to be true.
+            }
+        }
+
+        // Parkour landing
+        else if (trigger.gameObject.CompareTag("ObstacleTop"))
+        {
+            Debug.Log("Player collided with obstacle tag named: " + trigger.gameObject.tag);
+
+            // Confirm we're moving downward; otherwise we "missed the jump" and the main collider for the
+            // player body should hit the obstacle and existing logic should trigger gameover
+            Debug.Log("Player velocity.y = " + playerRb.velocity.y);
+            if (playerRb.velocity.y < 1)
+            {
+                // If we were in the air, then just land and run across the
+                // top of the barrier like any other flat surface...
+                if (!isOnGround)
+                {
+                    // Play the landing sound
+                    if (playerAudioController != null)
+                    {
+                        playerAudioController.Land();
+                    }
+
+                    // Award parkour bonus (reusing the squish method for now)
+                    scoreManager.AddSquishBonus();
+
+                    // Mark that we're no longer airborne
+                    isOnGround = true;
+
+                    // If we're already on top of the obstacle and just continuing to collide,
+                    // we won't re-run this land logic unless we jump again and come back down.
+                    // No bounce effect, bounce sound, or "squish" particle effects need to be
+                    // played since concrete barriers don't "squish" or bounce us. Ergo, no
+                    // need to tell the obstacle it got stomped either...
+                }
+            }
         }
     }
 

@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stompParticles: {fileID: 0}
-  stompSound: {fileID: 0}
+  stompSound: {fileID: 8300000, guid: 2d8e8e4cccd513142be764d5d182eb85, type: 3}
   squishDuration: 0.5
   finalSquishScaleY: 0.1
   fadeDuration: 1
@@ -78,7 +78,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 5721384544860870173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.016, z: 0}
+  m_LocalPosition: {x: -1.1, y: 3.016, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,7 +201,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5721384544860870173}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6aaadece9a5ea9143822001f81b1b4ae, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -213,8 +213,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.555891, y: 1.3691616, z: 1.6825414}
-  m_Center: {x: 1.0365254, y: 0.123978615, z: 0.3412707}
+  m_Size: {x: 10, y: 1.3691616, z: 1.6825414}
+  m_Center: {x: 0.15, y: 0.123978615, z: 0.3412707}
 --- !u!1001 &1113308085557816022
 PrefabInstance:
   m_ObjectHideFlags: 0
