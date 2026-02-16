@@ -29,8 +29,19 @@
                 },
                 {
                     "name": "",
-                    "id": "8a32b139-f2bc-4ea6-a40b-c8840c6d5403",
-                    "path": "<Touchscreen>/touch*/tap",
+                    "id": "6f044995-efdd-4ddb-aaaa-dc1405d763a4",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c66bf70-1aef-4ba8-82c3-e35247d5f0ca",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -99,22 +99,39 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+        Debug.Log($"PlayerInput present: {playerInput != null}, actions null? {playerInput.actions == null}, jumpAction null? {jumpAction == null}");
+
         if (playerInput == null)
         {
-            // Whoa! I didn't even know this is a thang!
-            playerInput = gameObject.AddComponent<PlayerInput>();
+            Debug.LogError("PlayerInput component missing on Player. Add it in the Inspector.");
+            enabled = false;
+            return;
         }
-        // Get jump action from the input asset
-        jumpAction = playerInput.actions["Jump"];
+
+        if (playerInput.actions == null)
+        {
+            Debug.LogError("PlayerInput.actions is NULL. Assign an Input Actions asset to the PlayerInput component.");
+            return;
+        }
+
+        jumpAction = playerInput.actions.FindAction("Jump", throwIfNotFound: false);
+        if (jumpAction == null)
+        {
+            Debug.LogError("Could not find 'Jump' action. Ensure your Input Actions asset has an action named 'Jump'.");
+            return;
+        }
+
+        // IMPORTANT: Make sure the action is enabled
+        jumpAction.Enable();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         //#if UNITY_EDITOR
-        //    // Enable touch simulation in Editor
-        //    InputSystem.EnableDevice(UnityEngine.InputSystem.Touchscreen.current);
-        //    Debug.Log("Touch simulation enabled");
+        //        // Enable touch simulation in Editor
+        //        InputSystem.EnableDevice(UnityEngine.InputSystem.Touchscreen.current);
+        //        Debug.Log("Touch simulation enabled");
         //#endif
 
         playerRb = GetComponent<Rigidbody>();
@@ -173,6 +190,9 @@ public class PlayerController : MonoBehaviour
     {
         if (clearedForLiftOff())
         {
+            // Consume (reset) the jump flag after checking
+            jumpTriggered = false;
+
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
             playerAnim.SetBool("Grounded", false);
@@ -182,13 +202,9 @@ public class PlayerController : MonoBehaviour
             // Kill the events firer to disable the footsteps sounds
             playerAnim.fireEvents = false;
 
-            // Play landing sound thru secondary audio source
+            // Play jumping sound thru secondary audio source
             playerAudioController.Jump();
         }
-
-        // Reset the jump flag after checking
-        jumpTriggered = false;
-        //Debug.Log("Player velocity.y = " + playerRb.velocity.y);
     }
 
     private bool clearedForLiftOff()
@@ -204,22 +220,24 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe to the jump action
-        jumpAction.performed += OnJumpInput;
+        if (jumpAction != null)
+            jumpAction.started += OnJumpInput;
     }
 
     private void OnDisable()
     {
         // Unsubscribe to the jump action
-        jumpAction.performed -= OnJumpInput;
+        if (jumpAction != null)
+            jumpAction.started -= OnJumpInput;
     }
 
     private void OnJumpInput(InputAction.CallbackContext context)
     {
+        // Log the control that triggered this action -- fodder for debugging
+        Debug.Log($"Jump triggered by: {context.control.displayName} from device: {context.control.device.name} during phase: {context.phase} with control path: {context.control.path}");
+
         // Set flag that jump was triggered
         jumpTriggered = true;
-
-        // Log the control that triggered this action -- fodder for debugging
-        Debug.Log($"Jump triggered by: {context.control.displayName} from device: {context.control.device.name}");
     }
 
     // If Player collides with something, handle it
@@ -297,7 +315,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Player collided with enemy tag named: " + trigger.gameObject.tag);
             // Confirm we're moving downward
-            if (playerRb.velocity.y < 0)
+            if (playerRb.velocity.y < 1)
             {
                 // Bounce the player
                 playerRb.AddForce(Vector3.up * stompBounceForce, ForceMode.Impulse);
