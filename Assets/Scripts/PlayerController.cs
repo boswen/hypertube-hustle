@@ -385,8 +385,9 @@ public class PlayerController : MonoBehaviour
         FadeOutObjects();
 
         // Play death animation, crash particle, and crash sound; stop dirt particles
-        playerAnim.SetBool("Death_b", true);
-        playerAnim.SetInteger("DeathType_int", 1);
+        playerAnim.SetTrigger("Die_trig");
+        int randomInt = Random.Range(1, 3); // returns either 1 or 2
+        playerAnim.SetInteger("DeathType_int", randomInt);
         playerAnim.fireEvents = false; // stop running footstep sounds coming in from events
         crashParticle.Play();
         pickupNCrashAudio.PlayOneShot(crashSound, 1.0f); // ...* and this one.
