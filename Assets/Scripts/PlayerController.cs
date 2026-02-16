@@ -233,11 +233,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnJumpInput(InputAction.CallbackContext context)
     {
-        // Log the control that triggered this action -- fodder for debugging
-        Debug.Log($"Jump triggered by: {context.control.displayName} from device: {context.control.device.name} during phase: {context.phase} with control path: {context.control.path}");
+        // Ignore inputs if we can't jump right now
+        if (!isOnGround || gameOver || gameCompleted || !isThisThingOn)
+            return;
 
         // Set flag that jump was triggered
         jumpTriggered = true;
+
+        // Log the control that triggered this action -- fodder for debugging
+        Debug.Log($"Jump triggered by: {context.control.displayName} from device: {context.control.device.name} during phase: {context.phase} with control path: {context.control.path}");
     }
 
     // If Player collides with something, handle it

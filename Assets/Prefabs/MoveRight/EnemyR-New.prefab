@@ -62,8 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8917b1b8261e904ba6788e964e9d438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stompParticles: {fileID: 141433446842962268, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
-    type: 3}
+  stompParticles: {fileID: 863153646993632166}
   stompSound: {fileID: 8300000, guid: 2d8e8e4cccd513142be764d5d182eb85, type: 3}
   squishDuration: 0.5
   finalSquishScaleY: 0.1
@@ -230,6 +229,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: CFXR3 Hit Misc F Smoke
       objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -293,6 +312,12 @@ PrefabInstance:
 --- !u!4 &863153646993632152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
+    type: 3}
+  m_PrefabInstance: {fileID: 724218980055415546}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &863153646993632166 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 141433446842962268, guid: 9fe8f8b3288e45a44af36ff8aa04486e,
     type: 3}
   m_PrefabInstance: {fileID: 724218980055415546}
   m_PrefabAsset: {fileID: 0}

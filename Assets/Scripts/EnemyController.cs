@@ -4,7 +4,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     // Vars
-    public ParticleSystem stompParticles;
+    public ParticleSystem stompParticles; // set via inspector
+    
     public AudioClip stompSound;
 
     private AudioSource audioSource;
@@ -12,9 +13,17 @@ public class EnemyController : MonoBehaviour
     private bool _consumed;  // flag to prevent multiple collisions/triggers from triggering the sequence multiple times
 
     // Tweak these in the Inspector
-    [SerializeField] private float squishDuration = 0.5f;  // how many seconds to squish
+    [SerializeField] private float squishDuration = 0.5f;     // how many seconds to squish
     [SerializeField] private float finalSquishScaleY = 0.1f;  // final scale on Y-axis
-    [SerializeField] private float fadeDuration = 1.0f;   // how many seconds to fade out
+    [SerializeField] private float fadeDuration = 1.0f;       // how many seconds to fade out
+
+    private void Awake()
+    {
+        if (!stompParticles)
+            stompParticles = transform.Find("CFXR3 Hit Misc F Smoke")?.GetComponent<ParticleSystem>();
+
+        Debug.Log($"stompParticles set? {stompParticles != null} on {name}");
+    }
 
     private void Start()
     {
@@ -23,6 +32,10 @@ public class EnemyController : MonoBehaviour
 
         // Grabs the first Renderer on this object or child object
         enemyRenderer = GetComponentInChildren<MeshRenderer>();
+
+        //stompParticles = GetComponentInChildren<ParticleSystem>();
+        Debug.Log("Found stompParticles named: " + stompParticles.name);
+        Debug.Log("... located in GO: " + stompParticles.gameObject.name);
 
         // Make sure your material is set to a Fade/Transparent mode
         // so changing the alpha actually works visually.
@@ -48,6 +61,7 @@ public class EnemyController : MonoBehaviour
         // Play particle effect
         if (stompParticles != null)
         {
+            stompParticles.gameObject.SetActive(true);
             stompParticles.Play();
         }
 
@@ -105,7 +119,7 @@ public class EnemyController : MonoBehaviour
         }
 
         // 3) Remove game object from world
-        Destroy(gameObject);
+        Destroy(gameObject, 1f); // wait 1 second before cleanup so that particles can play
     }
 
     /// <summary>

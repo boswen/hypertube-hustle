@@ -116,18 +116,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6f044995-efdd-4ddb-aaaa-dc1405d763a4"",
-                    ""path"": ""<Mouse>/press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5c66bf70-1aef-4ba8-82c3-e35247d5f0ca"",
-                    ""path"": ""<Touchscreen>/Press"",
+                    ""path"": ""<Pointer>/press"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
