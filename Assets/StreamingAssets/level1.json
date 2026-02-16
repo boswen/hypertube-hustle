@@ -86,7 +86,7 @@
             "spawnY": 0.25
         },
         {
-            "delay": 0.1,
+            "delay": 0.5,
             "prefabKey": "RoadBarrier",
             "spawnY": 0.25
         },
@@ -181,7 +181,7 @@
             "spawnY": 0.25
         },
         {
-            "delay": 0.1,
+            "delay": 0.5,
             "prefabKey": "RoadBarrier",
             "spawnY": 0.25
         },
@@ -291,7 +291,7 @@
             "spawnY": 0.25
         },
         {
-            "delay": 0.1,
+            "delay": 0.5,
             "prefabKey": "RoadBarrier",
             "spawnY": 0.25
         },
@@ -386,7 +386,7 @@
             "spawnY": 0.25
         },
         {
-            "delay": 0.1,
+            "delay": 0.5,
             "prefabKey": "RoadBarrier",
             "spawnY": 0.25
         },
@@ -501,7 +501,7 @@
             "spawnY": 0.25
         },
         {
-            "delay": 0.1,
+            "delay": 0.5,
             "prefabKey": "RoadBarrier",
             "spawnY": 0.25
         },

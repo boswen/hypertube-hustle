@@ -21,7 +21,7 @@ public class ObstacleController : MonoBehaviour
         // If sequence has already been triggered, ignore subsequent calls (e.g. from multiple colliders)
         if (_consumed) return;
 
-        // Optional: award score / play sfx / show particles
+        // TODO: award score / play sfx / show particles
         // ...
 
         ConsumeAllHitboxes(); // IMPORTANT: prevents body collider game-over after landing
@@ -32,6 +32,9 @@ public class ObstacleController : MonoBehaviour
     {
         // If sequence has already been triggered, ignore subsequent calls (e.g. from multiple colliders)
         if (_consumed) return;
+
+        // TODO: subtract from score? / play sfx / show particles
+        // ...
 
         ConsumeAllHitboxes(); // IMPORTANT: prevents top trigger firing after death
     }

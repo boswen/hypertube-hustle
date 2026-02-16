@@ -63,8 +63,8 @@ public class PlayerController : MonoBehaviour
     private TextMeshProUGUI firstLineOfText; // assigned to this at game start if gameOverText1 is assigned
 
     private ScoreManager scoreManager;
-    private EnemyController enemyController;
-    private ObstacleController obstacleController;
+    //private EnemyController enemyController;
+    //private ObstacleController obstacleController;
 
     public int finalScore;
       [Tooltip("Final score value; calculated automatically")]
@@ -244,18 +244,29 @@ public class PlayerController : MonoBehaviour
 
             // Re-enable the stupid footsteps...
             playerAnim.fireEvents = true; // allow running footstep sounds to come in from events again
+            return;
         }
 
         else if (collision.gameObject.CompareTag("Obstacle") && !crashPlayed)
         {
             Debug.Log("Player collided with an obstacle: " + collision.gameObject.name);
+            var obby = collision.gameObject.GetComponentInParent<ObstacleController>();
+
+            // Tell the obstacle a player hit it on the side, so it can disable its own colliders and prevent the top trigger from firing after death
+            obby.ConsumeAllHitboxes();
             TriggerGameOver();
+            return;
         }
 
         else if (collision.gameObject.CompareTag("Enemy") && !crashPlayed)
         {
             Debug.Log("Player collided with an enemy: " + collision.gameObject.name);
+            var enemy = collision.gameObject.GetComponentInParent<EnemyController>();
+
+            // Tell the enemy it got hit, so it can disable its own colliders and prevent the top trigger from firing after death
+            enemy.ConsumeAllHitboxes();
             TriggerGameOver();
+            return;
         }
     }
 
@@ -278,6 +289,7 @@ public class PlayerController : MonoBehaviour
             // add the thing picked up to some tabulator, e.g. ironOres++ or ironPlates++
 
             // StartCoroutine(PowerupCooldown());   // If the powerup has a timelimit, shut er down when it's done
+            return;
         }
 
         // Enemy Stomp
@@ -295,26 +307,46 @@ public class PlayerController : MonoBehaviour
                 // Add squish points!
                 scoreManager.AddSquishBonus(); // add points!
 
-                // Tell enemy it got stomped
-                enemyController = trigger.gameObject.GetComponentInParent<EnemyController>();
-                enemyController.OnStomped();
+                // Setup handle to enemy controller
+                var enemy = trigger.gameObject.GetComponentInParent<EnemyController>();
+                if (!enemy)
+                {
+                    Debug.LogError("EnemyTop was hit but no EnemyController found in parents!");
+                    return;
+                }
+
+                // Tell enemy it got stomped; it will disable its own colliders and prevent game-over collisions
+                enemy.OnStomped();
 
                 // We remain "in the air" after a bounce, so don't set isOnGround = true here
                 // Instead, the main playerController will register the collision with ground
                 // and set it's own isOnGround bool to be true.
             }
+            return;
         }
 
         // Parkour landing
         else if (trigger.gameObject.CompareTag("ObstacleTop"))
         {
             Debug.Log("Player collided with obstacle tag named: " + trigger.gameObject.tag);
+            Debug.Log("Current state of isOnGround = " + isOnGround);
 
             // Confirm we're moving downward; otherwise we "missed the jump" and the main collider for the
             // player body should hit the obstacle and existing logic should trigger gameover
             Debug.Log("Player velocity.y = " + playerRb.velocity.y);
             if (playerRb.velocity.y < 1f)
             {
+                // Setup handle to obstacle controller
+                var obby = trigger.gameObject.GetComponentInParent<ObstacleController>();
+                if (!obby)
+                {
+                    Debug.LogError("ObstacleTop was hit but no ObstacleController found in parents!");
+                    return;
+                }
+
+                // Tell the obstacle the player landed on it successfully; it will disable its own colliders and prevent game-over collisions
+                obby.OnLandedOnTop(); 
+
                 // If we were in the air, then just land and run across the
                 // top of the barrier like any other flat surface...
                 if (!isOnGround)
@@ -338,6 +370,7 @@ public class PlayerController : MonoBehaviour
                     // need to tell the obstacle it got stomped either...
                 }
             }
+            return;
         }
     }
 
@@ -353,7 +386,7 @@ public class PlayerController : MonoBehaviour
 
         // Play death animation, crash particle, and crash sound; stop dirt particles
         playerAnim.SetBool("Death_b", true);
-        playerAnim.SetInteger("DeathType_int", 2);
+        playerAnim.SetInteger("DeathType_int", 1);
         playerAnim.fireEvents = false; // stop running footstep sounds coming in from events
         crashParticle.Play();
         pickupNCrashAudio.PlayOneShot(crashSound, 1.0f); // ...* and this one.
@@ -457,8 +490,9 @@ public class PlayerController : MonoBehaviour
         // Ensure the object is fully transparent
         material.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
 
-        // Destroy the object after fading out
-        Destroy(obj);
+        // Disable the object after fading out
+        obj.SetActive(false);
+        //Destroy(obj);
     }
 
     public void FinalScore(int winCondition)
