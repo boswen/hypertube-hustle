@@ -37,41 +37,47 @@ public class PlayerController : MonoBehaviour
 
     [Header("Particle Effect Settings")]
     public ParticleSystem dirtParticle;
-    [Tooltip("Attach dirt (from player running) particle effects here!")]
+      [Tooltip("Attach dirt (from player running) particle effects here!")]
     public ParticleSystem itemPickupParticle;
-    [Tooltip("Attach item pickup particle effects here!")]
+      [Tooltip("Attach item pickup particle effects here!")]
     public ParticleSystem crashParticle;
-    [Tooltip("Attach crash particle effects here!")]
+      [Tooltip("Attach crash particle effects here!")]
 
     [Header("Gameover State Settings")]
     public bool gameOver;
-    [Tooltip("Has the current round of the game ended by failure?")]
+      [Tooltip("Has the current round of the game ended by failure?")]
     public bool gameCompleted;
-    [Tooltip("Has the current round of the game ended by winning?")]
+      [Tooltip("Has the current round of the game ended by winning?")]
     private bool crashPlayed;
-    [Tooltip("Have the 'game over' state commands executed yet?")]
+      [Tooltip("Have the 'game over' state commands executed yet?")]
     public GameObject gameOverText1;
-    [Tooltip("Attach game object for line 1 of the game over text here!")]
+      [Tooltip("Attach game object for line 1 of the game over text here!")]
     public GameObject gameOverText2;
-    [Tooltip("Attach game object for line 2 of the game over text here!")]
+      [Tooltip("Attach game object for line 2 of the game over text here!")]
     public GameObject finalScoreTextGO;
-    [Tooltip("Attach game object for the final score at game over text here!")]
+      [Tooltip("Attach game object for the final score at game over text here!")]
     public GameObject mainScoreTextGO;
-    [Tooltip("Attach game object for the main score text here!")]
+      [Tooltip("Attach game object for the main score text here!")]
+    
     private TextMeshProUGUI scoreText; // assigned to this at game start if mainScoreTextGO is assigned
     private TextMeshProUGUI firstLineOfText; // assigned to this at game start if gameOverText1 is assigned
+
     private ScoreManager scoreManager;
     private EnemyController enemyController;
+    private ObstacleController obstacleController;
+
     public int finalScore;
-    [Tooltip("Final score value; calculated automatically")]
+      [Tooltip("Final score value; calculated automatically")]
     public float fadeMusicDuration = 5f;
-    [Tooltip("Duration of music fade out.")]
+      [Tooltip("Duration of music fade out.")]
     public float fadeObbysDelay = 2f;
-    [Tooltip("Delay before obstacles begin to fade out.")]
+      [Tooltip("Delay before obstacles begin to fade out.")]
     public float fadeObbysDuration = 2f;
-    [Tooltip("Duration of obstacle fade outs.")]
+      [Tooltip("Duration of obstacle fade outs.")]
 
     public bool isThisThingOn;
+      [Tooltip("Flag to check game state.")]
+    
     private bool jumpTriggered = false;
 
     // Input stuff
@@ -216,7 +222,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Jump triggered by: {context.control.displayName} from device: {context.control.device.name}");
     }
 
-
+    // If Player collides with something, handle it
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Player collision detected!");
@@ -253,7 +259,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // If Player collides with something, handle it
+    // If Player collides with a trigger, handle it
     private void OnTriggerEnter(Collider trigger)
     {
         Debug.Log("Player trigger detected with " + trigger.gameObject.name);
@@ -307,7 +313,7 @@ public class PlayerController : MonoBehaviour
             // Confirm we're moving downward; otherwise we "missed the jump" and the main collider for the
             // player body should hit the obstacle and existing logic should trigger gameover
             Debug.Log("Player velocity.y = " + playerRb.velocity.y);
-            if (playerRb.velocity.y < 1)
+            if (playerRb.velocity.y < 1f)
             {
                 // If we were in the air, then just land and run across the
                 // top of the barrier like any other flat surface...

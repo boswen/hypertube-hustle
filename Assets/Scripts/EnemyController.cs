@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 
     private AudioSource audioSource;
     private MeshRenderer enemyRenderer;
+    private bool _consumed;  // flag to prevent multiple collisions/triggers from triggering the sequence multiple times
 
     // Tweak these in the Inspector
     [SerializeField] private float squishDuration = 0.5f;  // how many seconds to squish
@@ -29,8 +30,21 @@ public class EnemyController : MonoBehaviour
         // Rendering Mode to "Fade" or "Transparent" in the material’s Inspector.
     }
 
+    public void ConsumeAllHitboxes()
+    {
+        if (_consumed) return;
+        _consumed = true;
+
+        // disables Top Collider + HogAnimator body collider (and any future colliders you add)
+        foreach (var c in GetComponentsInChildren<Collider>(true))
+            c.enabled = false;
+    }
+
     public void OnStomped()
     {
+        // If sequence has already been triggered, ignore subsequent calls (e.g. from multiple colliders)
+        if (_consumed) return;
+
         // Play particle effect
         if (stompParticles != null)
         {
@@ -42,6 +56,9 @@ public class EnemyController : MonoBehaviour
         {
             audioSource.PlayOneShot(stompSound, 1.0f);
         }
+
+        // Disable sibling colliders/triggers to prevent further interactions
+        ConsumeAllHitboxes();
 
         // Start the squish & fade-out sequence
         StartCoroutine(SquishAndFade());
