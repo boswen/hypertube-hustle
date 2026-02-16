@@ -33,9 +33,8 @@ public class EnemyController : MonoBehaviour
         // Grabs the first Renderer on this object or child object
         enemyRenderer = GetComponentInChildren<MeshRenderer>();
 
-        //stompParticles = GetComponentInChildren<ParticleSystem>();
-        Debug.Log("Found stompParticles named: " + stompParticles.name);
-        Debug.Log("... located in GO: " + stompParticles.gameObject.name);
+        //Debug.Log("Found stompParticles named: " + stompParticles.name);
+        //Debug.Log("... located in GO: " + stompParticles.gameObject.name);
 
         // Make sure your material is set to a Fade/Transparent mode
         // so changing the alpha actually works visually.
