@@ -1,32 +1,62 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 
-[System.Serializable]
 public class LevelLoader : MonoBehaviour
 {
-    public string levelFileName = "level1.json"; // JSON file name in StreamingAssets
+    public string levelFileName = "level1.json"; // must live in Assets/StreamingAssets/
     public LevelDataJson levelDataJson;
 
-    void Awake()
+    private void Awake()
     {
-        LoadLevelData();
-        Debug.Log("Presumably.. exiting the LevelLoader class now.");
+        // Kick off load. In WebGL this must be async.
+        StartCoroutine(LoadLevelDataCoroutine());
     }
 
-    void LoadLevelData()
+    private IEnumerator LoadLevelDataCoroutine()
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, levelFileName);
-        if (File.Exists(filePath))
+        string pathOrUrl = Path.Combine(Application.streamingAssetsPath, levelFileName);
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        // WebGL: StreamingAssetsPath is a URL, so use UnityWebRequest
+        Debug.Log($"[LevelLoader] WebGL loading: {pathOrUrl}");
+        using (UnityWebRequest req = UnityWebRequest.Get(pathOrUrl))
         {
-            string jsonString = File.ReadAllText(filePath);
-            levelDataJson = JsonUtility.FromJson<LevelDataJson>(jsonString);
-            Debug.Log("Loaded " + levelDataJson.spawnEvents.Length + " spawn events.");
+            yield return req.SendWebRequest();
+
+            if (req.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[LevelLoader] FAIL {pathOrUrl} :: {req.error} :: {req.responseCode}");
+                yield break;
+            }
+
+            ParseJson(req.downloadHandler.text);
         }
-        else
+#else
+        // Editor/Standalone: normal file IO works
+        if (!File.Exists(pathOrUrl))
         {
-            Debug.LogError("Level data file not found: " + filePath);
+            Debug.LogError("Level data file not found: " + pathOrUrl);
+            yield break;
         }
+
+        string jsonString = File.ReadAllText(pathOrUrl);
+        ParseJson(jsonString);
+        yield break;
+#endif
+    }
+
+    private void ParseJson(string jsonString)
+    {
+        levelDataJson = JsonUtility.FromJson<LevelDataJson>(jsonString);
+
+        if (levelDataJson == null || levelDataJson.spawnEvents == null)
+        {
+            Debug.LogError("Level JSON parsed but spawnEvents was null. Check JSON format vs LevelDataJson.");
+            return;
+        }
+
+        Debug.Log("Loaded " + levelDataJson.spawnEvents.Length + " spawn events.");
     }
 }
