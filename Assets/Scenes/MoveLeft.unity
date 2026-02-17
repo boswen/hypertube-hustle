@@ -1171,7 +1171,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0a009599283c65d4b9127e5620c9fd3e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577378743}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a4d721e3fd766747b2a1d4645d5aa26, type: 3}
   m_Name: 
@@ -1585,6 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91f58003c0f30d4c9bb7ec1ba77ec10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgMusicGO: {fileID: 545774196}
   mainScoreTextGO: {fileID: 1739613807}
   hasStarted: 0
   playerCtrlRef: {fileID: 0}

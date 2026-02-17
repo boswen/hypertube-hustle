@@ -67,7 +67,7 @@ public class EnemyController : MonoBehaviour
         // Make a "squish" sound
         if (stompSound != null && audioSource != null)
         {
-            audioSource.PlayOneShot(stompSound, 1.0f);
+            audioSource.PlayOneShot(stompSound, 0.5f);
         }
 
         // Disable sibling colliders/triggers to prevent further interactions

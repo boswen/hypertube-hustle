@@ -11,7 +11,9 @@ public class ToStartPressAnyKey : MonoBehaviour
     // warning message: "There are no audio listeners in the scene. Please ensure there
     // is always one audio listener in the scene." Soooooo ... let's just get the
     // references to the sources of these sounds and disable them *that* way instead!
-    private GameObject bgMusicGO; // for disabling background music
+
+    [SerializeField]
+    private GameObject bgMusicGO; // for enabling/disabling background music
 
     // We'll need references to a few other things as well
     private SpawnManager spawner;
@@ -32,7 +34,8 @@ public class ToStartPressAnyKey : MonoBehaviour
         // Setup Component/GO "pointers" (sort of)
         spawner = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         //mainCameraEars = GameObject.Find("Main Camera").GetComponent<AudioListener>();
-        bgMusicGO = GameObject.Find("BackgroundMusic");
+        //bgMusicGO = GameObject.Find("BackgroundMusic"); // set in inspector instead via serialized field
+
         titleScreen = GameObject.Find("Title Screen");
         backgroundMovie = GameObject.Find("BG Movie");
         playerAudioSource = GameObject.Find("Player").GetComponents<AudioSource>()[1];
@@ -65,7 +68,12 @@ public class ToStartPressAnyKey : MonoBehaviour
     void Update()
     {
         // listen for any input and call spawner.StartGame() once received
-        if (!hasStarted && Input.anyKeyDown)
+        bool startPressed =
+            Input.anyKeyDown ||
+            Input.GetMouseButtonDown(0) ||
+            (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began);
+
+        if (!hasStarted && startPressed)
         {
             hasStarted = true; // set it to true in case we need to track this later
             playerCtrlRef.isThisThingOn = true;
@@ -76,10 +84,21 @@ public class ToStartPressAnyKey : MonoBehaviour
             // --Start the main game
             //spawner.enabled = true; // unnecessary .. just wait to do the below
             spawner.StartGame();
-            // --"Unplug" the ears on the camera so that sound works again! :D
-            //mainCameraEars.enabled = true;
-            // ---*Cough* Apparently, we need to turn on the sound sources instead.
-            bgMusicGO.SetActive(true); // background music
+
+            // Background music: start clean from 0 on first user interaction
+            var music = bgMusicGO != null ? bgMusicGO.GetComponent<AudioSource>() : null;
+            if (music != null)
+            {
+                bgMusicGO.SetActive(true);
+                music.Stop();
+                music.time = 0f;
+                music.Play();
+            }
+            else if (bgMusicGO != null)
+            {
+                bgMusicGO.SetActive(true); // solo fallback
+            }
+
             playerAudioSource.enabled = true; // re-enable sound of running footsteps
             // --Next, keep the dirt particles off until the game starts
             dirtParticle.SetActive(true);
