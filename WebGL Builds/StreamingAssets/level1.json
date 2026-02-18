@@ -1,0 +1,549 @@
+{
+    "spawnEvents": [
+        {
+            "delay": 0.0,
+            "prefabKey": "IronOre",
+            "spawnY": 1.5
+        },
+        {
+            "delay": 3,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 3.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 3.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "IronPlate",
+            "spawnY": 4.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronPlate",
+            "spawnY": 5.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.75,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronOre",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 2.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 3.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.75,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 0.0,
+            "prefabKey": "IronOre",
+            "spawnY": 1.5
+        },
+        {
+            "delay": 3,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 3.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 3.0,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronPlate",
+            "spawnY": 4.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronPlate",
+            "spawnY": 5.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.75,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "IronOre",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 2.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 3.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronPlate",
+            "spawnY": 4.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 2.5
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronPlate",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 4,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 3.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronPlate",
+            "spawnY": 4.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronPlate",
+            "spawnY": 5.0
+        },
+        {
+            "delay": 3.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.75,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronOre",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 2.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 3.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 0.0,
+            "prefabKey": "IronOre",
+            "spawnY": 1.5
+        },
+        {
+            "delay": 3,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 3.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronPlate",
+            "spawnY": 4.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronPlate",
+            "spawnY": 5.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "IronOre",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "Plate",
+            "spawnY": 2.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 3.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronPlate",
+            "spawnY": 4.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronPlate",
+            "spawnY": 2.5
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 1.75
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronPlate",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 3,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 3.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronPlate",
+            "spawnY": 4.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronPlate",
+            "spawnY": 5.0
+        },
+        {
+            "delay": 1.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.0,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "IronOre",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 2.0
+        },
+        {
+            "delay": 0.1,
+            "prefabKey": "IronOre",
+            "spawnY": 3.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 0.5,
+            "prefabKey": "RoadBarrier",
+            "spawnY": 0.25
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 2.5,
+            "prefabKey": "WildHog",
+            "spawnY": 1.0
+        },
+        {
+            "delay": 1.0,
+            "prefabKey": "IronOre",
+            "spawnY": 1
+        },
+        {
+            "delay": 0.0,
+            "prefabKey": "IronPlate",
+            "spawnY": 1.5
+        },
+        {
+            "delay": 0.0,
+            "prefabKey": "IronOre",
+            "spawnY": 2.0
+        },
+        {
+            "delay": 0.0,
+            "prefabKey": "IronPlate",
+            "spawnY": 2.5
+        },
+        {
+            "delay": 0.0,
+            "prefabKey": "IronOre",
+            "spawnY": 3.0
+        },
+        {
+            "delay": 3.0,
+            "prefabKey": "exitTrigger",
+            "spawnY": 1.0
+        }
+    ]
+}
